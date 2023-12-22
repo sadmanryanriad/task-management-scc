@@ -1,7 +1,7 @@
 import { FaInfo, FaTrash } from "react-icons/fa";
 
 /* eslint-disable react/prop-types */
-const CardTask = ({ title, description, priority, deadline }) => {
+const CardTask = ({ id, title, description, priority, deadline, handleDelete }) => {
   return (
     <>
       <div className="card w-96 mt-5 mx-auto bg-base-100 shadow-xl">
@@ -16,7 +16,7 @@ const CardTask = ({ title, description, priority, deadline }) => {
             <button className="btn btn-sm btn-info">
               Edit<FaInfo></FaInfo>
             </button>
-            <button className="btn btn-sm btn-error text-white">
+            <button className="btn btn-sm btn-error text-white" onClick={()=>handleDelete(id)}>
               Delete<FaTrash></FaTrash>
             </button>
           </div>

@@ -36,14 +36,28 @@ const Dashboard = () => {
     })
   };
 
+  const handleDelete = (id) => {
+    // console.log("Deleted task id:", id);
+    axiosSecure.delete(`/tasks/${id}`)
+   .then(res=>{
+        console.log(res.data);
+        refetch();
+        if(res.data.deletedCount){
+            toast.success("Task deleted successfully");
+        }else{
+            toast.error("Something went wrong!");
+        }
+    })
+  }
+
   return (
     <div className="p-1 border w-full">
       <Header>Task Management Dashboard</Header>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
       <TaskInputForm onSubmit={handleTaskSubmit}></TaskInputForm>
-      <AllTaskList></AllTaskList>
-      <OnGoingList></OnGoingList>
-      <CompletedList></CompletedList>
+      <AllTaskList handleDelete={handleDelete}></AllTaskList>
+      <OnGoingList handleDelete={handleDelete}></OnGoingList>
+      <CompletedList handleDelete={handleDelete}></CompletedList>
       </div>
     </div>
   );
