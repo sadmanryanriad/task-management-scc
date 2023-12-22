@@ -5,11 +5,13 @@ const TaskInputForm = ({ onSubmit }) => {
   const {
     control,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
   const handleFormSubmit = (data) => {
     onSubmit(data);
+    reset();
   };
 
   return (
