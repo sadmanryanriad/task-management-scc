@@ -9,13 +9,13 @@
     useEffect(() => {
         const options = {
         strings: [
-            "Welcome to SCC Technovision Inc.",
-            "Collaborative Task Management Platform",
-            "Enhance and Improve Your Task Management Experience",
+            "Welcome to SCC Technovision Inc. 😀",
+            "Collaborative Task Management Platform 🚀",
+            "📈 Enhance and Improve Your Task Management Experience 🔥",
         ],
         typeSpeed: 50, // Typing speed in milliseconds
         backSpeed: 25, // Backspacing speed in milliseconds
-        backDelay: 1000, // Delay before starting to backspace
+        backDelay: 1500, // Delay before starting to backspace
         startDelay: 500, // Delay before typing starts
         loop: true, // Loop the animation
         showCursor: true, // Show the blinking cursor

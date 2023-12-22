@@ -13,12 +13,12 @@ const menu = (
       <Link to={"/dashboard"}>Dashboard</Link>
     </li>
     <li>
-      <HashLink smooth to={"#user-types"}>
+      <HashLink smooth to={"/#user-types"}>
         Benefits
       </HashLink>
     </li>
     <li>
-      <HashLink smooth to={"#faq"}>
+      <HashLink smooth to={"/#faq"}>
         FAQ
       </HashLink>
     </li>
