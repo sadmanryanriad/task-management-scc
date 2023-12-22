@@ -44,7 +44,7 @@
             <h1 className="text-4xl md:text-6xl font-bold text-gray-200 dark:text-gray-400 mb-20 h-24">
                 <span className="typing-element"></span>
             </h1>
-            <Link to="/login">
+            <Link to="/dashboard">
                 <button className="mt-40 mx-auto btn bg-green-400 border-none px-8 py-3 rounded-full hover:bg-gray-800 hover:text-gray-200 hover:scale-105 transform transition duration-300">
                 {"Let's Explore"}
                 </button>

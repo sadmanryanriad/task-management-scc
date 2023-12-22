@@ -14,7 +14,7 @@ const menu = (
     </li>
     <li>
       <HashLink smooth to={"#user-types"}>
-        Who
+        Benefits
       </HashLink>
     </li>
     <li>
