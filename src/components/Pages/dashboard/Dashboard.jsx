@@ -4,10 +4,16 @@ import Header from "../../miniComponents/Header";
 import TaskInputForm from "./TaskInputForm";
 import { AuthContext } from "../../../provider/AuthProvider";
 import toast from "react-hot-toast";
+import AllTaskList from "./AllTaskList";
+import OnGoingList from "./OnGoingList";
+import CompletedList from "./CompletedList";
+import useAllTaskList from "../../../hooks/useAllTaskList";
 
 const Dashboard = () => {
     const {user} = useContext(AuthContext);
     const axiosSecure = useAxiosSecure();
+    const [,,refetch] = useAllTaskList();
+
   const handleTaskSubmit = (data) => {
     console.log("Submitted data:", data);
     const taskInfo = {
@@ -15,12 +21,13 @@ const Dashboard = () => {
         title: data.title,
         description: data.description,
         priority: data.priority,
-        dueDate: data.dueDate,
+        deadline: data.deadline,
         status: "todo",
     }
     axiosSecure.post("/tasks", taskInfo)
     .then(res=>{
         // console.log(res.data);
+        refetch();
         if(res.data.insertedId){
             toast.success("Task added successfully");
         }else{
@@ -30,9 +37,14 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="p-1">
+    <div className="p-1 border w-full">
       <Header>Task Management Dashboard</Header>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
       <TaskInputForm onSubmit={handleTaskSubmit}></TaskInputForm>
+      <AllTaskList></AllTaskList>
+      <OnGoingList></OnGoingList>
+      <CompletedList></CompletedList>
+      </div>
     </div>
   );
 };
