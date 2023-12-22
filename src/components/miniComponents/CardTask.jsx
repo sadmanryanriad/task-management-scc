@@ -1,10 +1,10 @@
 import { FaTrash } from "react-icons/fa";
 
 /* eslint-disable react/prop-types */
-const CardTask = ({ id, title, description, priority, deadline, handleDelete }) => {
+const CardTask = ({ id, title, description, priority, deadline, handleDelete, handleDragStart }) => {
   return (
     <>
-      <div className="card w-96 mt-5 mx-auto bg-base-100 shadow-xl">
+      <div draggable onDragStart={(e) => handleDragStart(e, id)} className="card w-96 mt-5 mx-auto bg-base-100 shadow-xl cursor-pointer">
         <div className="card-body">
           <h2 className="card-title">{title}</h2>
             <div className="badge badge-outline">{priority}</div>
