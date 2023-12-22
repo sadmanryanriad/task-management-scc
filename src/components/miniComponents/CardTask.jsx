@@ -1,4 +1,4 @@
-import { FaInfo, FaTrash } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
 
 /* eslint-disable react/prop-types */
 const CardTask = ({ id, title, description, priority, deadline, handleDelete }) => {
@@ -13,9 +13,6 @@ const CardTask = ({ id, title, description, priority, deadline, handleDelete }) 
           <div className="badge badge-secondary badge-outline">{deadline}</div>
           </div>
           <div className="card-actions justify-end">
-            <button className="btn btn-sm btn-info">
-              Edit<FaInfo></FaInfo>
-            </button>
             <button className="btn btn-sm btn-error text-white" onClick={()=>handleDelete(id)}>
               Delete<FaTrash></FaTrash>
             </button>
