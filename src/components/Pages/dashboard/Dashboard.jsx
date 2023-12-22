@@ -1,10 +1,17 @@
+import Header from "../../miniComponents/Header";
+import TaskInputForm from "./TaskInputForm";
 
 const Dashboard = () => {
-    return (
-        <div>
-            This is Dashboard
-        </div>
-    );
+  const handleTaskSubmit = (data) => {
+    console.log("Submitted data:", data);
+  };
+
+  return (
+    <div className="p-1">
+      <Header>Task Management Dashboard</Header>
+      <TaskInputForm onSubmit={handleTaskSubmit}></TaskInputForm>
+    </div>
+  );
 };
 
 export default Dashboard;
