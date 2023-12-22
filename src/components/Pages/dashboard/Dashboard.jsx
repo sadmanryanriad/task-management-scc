@@ -51,7 +51,7 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="p-1 border w-full">
+    <div className="p-1 w-full">
       <Header>Task Management Dashboard</Header>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
       <TaskInputForm onSubmit={handleTaskSubmit}></TaskInputForm>
