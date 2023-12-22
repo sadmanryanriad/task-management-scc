@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosSecure = axios.create({
-    baseURL: "http://localhost:5000"
+    baseURL: "https://collaborative-task-management-server-blond.vercel.app/"
 })
 
 const useAxiosSecure = () => {
