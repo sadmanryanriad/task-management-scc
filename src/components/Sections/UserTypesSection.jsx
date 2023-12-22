@@ -40,9 +40,9 @@ const UserTypesSection = () => {
         <Header>Who Benefits from Our Platform?</Header>
         <div className="flex flex-wrap justify-center items-center gap-6 mt-10">
           {userTypes.map((type, index) => (
-            <div
+            <div data-aos="fade-right"
               key={index}
-              className="bg-white p-4 rounded-lg shadow-md flex items-center"
+              className="bg-white p-4 rounded-lg shadow-md flex items-center text-gray-200"
               style={{backgroundColor: getRandomColor()}}
             >
               <p className="text-lg font-medium">{type}</p>
